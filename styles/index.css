@@ -1,25 +1,26 @@
-.bg-dark{
-    background-color: blue !important;
-    min-height: 50px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 .navbar{
-    background-color: #ffffff ;
+    background-color: #f8f3f3 ;
     box-shadow: 0 2px 4px rgb(0, 0, 0,0.05);
     min-height: 100px;
 }
 .nav-link{
     color: #000000;
     margin-right: 15px;
-    font-family: cursive;
-    font-size: x-large;
-    font-style: oblique;
+    font-family: italic;
+    font-size: large;
+    font-style: inherit;
 }
 .nav-link:hover{
     color: #038C17;
 }
 .logo-empresa{
-    min-width: 80px;
-    max-width: 100px;
+    min-width: 60px;
+    max-width: 80px;
     margin-left: 60px;
 }
 .navbar-toggler{
@@ -35,9 +36,10 @@
     margin-top: 10px;
 }
 .slide img{
-    height: 60vh !important;
+    height: 90vh !important;
 }
 .titlealbum{
+    text-align: center;
     font-family: cursive;
     color: #A68B03;
 }
