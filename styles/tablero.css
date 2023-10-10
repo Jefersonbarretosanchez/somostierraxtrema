@@ -1,4 +1,4 @@
-:root{
+:root {
     --navbar-lateral-color: #3E4851;
     --navbar-lateral-backgroud: #FFFFFF;
     --navbar-lateral-boxshadow: #A4D8CB;
@@ -6,9 +6,9 @@
 
     --navbar-lateral-header: #3E4851;
 
-    --navbar-superior-background : #1777cc;
-    --navbar-superior-color : #FFFFFF;
-    --navbar-superior-hover : #A4D8CB;
+    --navbar-superior-background: #1777cc;
+    --navbar-superior-color: #FFFFFF;
+    --navbar-superior-hover: #A4D8CB;
 
     --navbar-externo-color: #FFFFFF;
     --navbar-externo-link: #FFFFFF;
@@ -21,17 +21,20 @@
     box-sizing: border-box;
 }
 
-.nav-externo-color a{
+.nav-externo-color a {
     color: var(--navbar-externo-link) !important;
 }
-.nav-externo-shadow{
+
+.nav-externo-shadow {
     /* box-shadow: var(--navbar-lateral-boxshadow) 1.95px 1.95px; */
-    -webkit-box-shadow: 0px 7px 0px 0px var(--navbar-lateral-boxshadow); 
+    -webkit-box-shadow: 0px 7px 0px 0px var(--navbar-lateral-boxshadow);
     box-shadow: 0px 7px 0px 0px var(--navbar-lateral-boxshadow);
 }
-.navbar{
+
+.navbar {
     height: 60px;
 }
+
 nav {
     display: block;
 }
@@ -40,9 +43,11 @@ a:hover {
     color: #0458eb;
     text-decoration: underline;
 }
-.dashboard-header{
+
+.dashboard-header {
     background-color: var(--navbar-lateral-header) !important;
 }
+
 .dashboard {
     display: -webkit-box;
     display: -webkit-flex;
@@ -242,12 +247,13 @@ a:hover {
     -ms-flex-align: center;
     align-items: center;
     transition: ease-out 0.5s;
-  max-width: 235px !important;
+    max-width: 235px !important;
 }
 
 .dashboard-nav-dropdown-item:hover {
     background: rgba(255, 255, 255, 0.04);
 }
+
 /* 
 .menu-toggle {
     position: relative;
@@ -336,6 +342,7 @@ a:hover {
     overflow: hidden;
     background-color: rgba(236, 238, 239, 0.3);
 }
+
 @media (min-width: 992px) {
     .dashboard-app {
         margin-left: 238px;
@@ -377,8 +384,8 @@ a:hover {
         display: flex;
         color: var(--navbar-superior-color);
     }
-    .dashboard-nav header 
-    .menu-toggle:hover,
+
+    .dashboard-nav header .menu-toggle:hover,
     .menu-toggle:active,
     .menu-toggle:focus {
         color: var(--navbar-superior-hover) !important;
@@ -396,43 +403,49 @@ a:hover {
 }
 
 /* Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) { 
-    .stepwizard-step{
+@media (max-width: 576px) {
+    .stepwizard-step {
         font-size: 11px !important;
         padding-left: 5px;
-    }    
+    }
 }
-@media (max-width: 426px) { 
-    .usuario{
+
+@media (max-width: 426px) {
+    .usuario {
         display: none;
     }
-    .nav-externo-color a{
+
+    .nav-externo-color a {
         font-size: 0.7rem !important;
     }
-    .img_logo_completo{
+
+    .img_logo_completo {
         height: 15px !important;
     }
 
-    .dash_campus{
+    .dash_campus {
         font-size: 15px;
     }
+
     .pago_final {
         width: 424px !important;
     }
 }
-@media (max-width: 768px) { 
-    .abs-center-img{
+
+@media (max-width: 768px) {
+    .abs-center-img {
         height: 100px !important;
         margin-top: 0 !important;
         width: 100% !important;
     }
+
     .pago_final {
         width: 425px !important;
     }
 }
 
-@media (max-width: 991.98px) { 
-    nav img{
+@media (max-width: 991.98px) {
+    nav img {
         height: 35px;
     }
 }
@@ -478,7 +491,8 @@ a:hover {
     text-decoration: none;
     color: var(--navbar-superior-hover);
 }
-.formulario .btn{
+
+.formulario .btn {
     width: 100%;
     padding: 14px;
     border: none;
@@ -492,6 +506,36 @@ a:hover {
     cursor: pointer;
     display: block;
 }
-.formulario .btn:hover{
+
+.formulario .btn:hover {
     background: #141313;
+}
+.text {
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.title-principal{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    text-align: center;
+}
+.title {
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.hr-title{
+    border: 3px solid #666; border-radius: 300px/10px; height: 0px; text-align: center; width: 90%;
+}
+.hr-encabezado {
+    border: 0;
+    height: 2px;
+    border-top: 1px dashed black;
+    border-bottom: 1px dashed black;
+    width: 90%;
+}
+
+.hr-datos {
+    border: 0;
+    border-top: 4px double blue;
+    width: 90%;
 }

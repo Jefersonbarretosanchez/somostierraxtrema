@@ -31,11 +31,11 @@
                     </div>
                 </a>
                 <div class='dashboard-nav-dropdown'>
-                    <a href="#!" class="dashboard-nav-item disabled"><i class="fa-solid fa-user"></i>Mi Cuenta</a>
+                    <a href="./tableroAdm.php" class="dashboard-nav-item disabled"><i class="fa-solid fa-user"></i>Mi Cuenta</a>
                 </div>
 
                 <div class='dashboard-nav-dropdown'>
-                    <a href="#!" class="dashboard-nav-item"><i class=" fas fa-user-lock "></i>Admin</a>
+                    <a href="./adm.php" class="dashboard-nav-item"><i class=" fas fa-user-lock "></i>Admin</a>
                 </div>
                 <div class='dashboard-nav-dropdown'>
                     <a href="#!" class="dashboard-nav-item disabled"><i class="fa-solid fa-shop"></i>Reservas</a>
