@@ -130,7 +130,7 @@ for (let i = 0; i < mostrarClave.length; i++) {
 }
 
 // Formulario de Registro
-let nombre, correo, password, cbx_notificaciones, cbx_terminos;
+let nombre, correo,telefono, password, cbx_notificaciones, cbx_terminos;
 
 if (document.getElementById('btnRegistro')) {
     const btnRegistro = document.getElementById('btnRegistro')
@@ -164,13 +164,6 @@ if (document.getElementById('btnRegistro')) {
             inputError([formRegistro.nombre]);
             formRegistro.nombre.focus();
             return false;
-        } else {
-            if (!validarSoloLetras(nombre)) {
-                mostrarError('No se permiten caracteres especiales', msError);
-                inputError([formRegistro.nombre]);
-                formRegistro.nombre.focus();
-                return false;
-            }
         }
 
         if (correo == "" || correo == null) {
@@ -239,7 +232,7 @@ if(document.getElementById('btnLogin'))
 
         if(correo=="" && password=="")
         {
-            mostrarError('Por favor ingreseb su usuario/contraseña',msError);
+            mostrarError('Por favor ingrese su usuario y contraseña',msError);
             inputError([formLogin.correo,formLogin.password]);
             return false;
         }else{
@@ -274,6 +267,65 @@ if(document.getElementById('btnLogin'))
 }
 
 
+// Formulario Contacto
+if(document.getElementById('btnContact'))
+{
+    const btnContact=document.getElementById('btnContact');
+    
+    btnContact.addEventListener('click',(e)=>
+    {
+        e.preventDefault();
+
+        const msError=document.querySelector('#formContact .error-text');
+        msError.innerHTML="";
+        msError.classList.remove('active');
+
+        nombre=formContact.nombre.value.trim();
+        correo=formContact.correo.value.trim();
+        telefono=formContact.telefono.value.trim();
+
+        if (nombre == "" && correo == "" && telefono == "") {
+            mostrarError('Todos Los Campos Son Obligatorios', msError);
+
+            inputError([formContact.nombre, formContact.correo, formContact.telefono]);
+            return false;
+        } else {
+            inputErrorRemove([formContact.nombre, formContact.correo, formContact.telefono]);
+        }
+
+        if(nombre=="" || nombre==null){
+            mostrarError('Por Favor Ingrese Su Nombre Completo', msError);
+            inputError([formContact.nombre]);
+            formContact.nombre.focus();
+            return false;
+        }
+
+        if (correo == "" || correo == null) {
+            mostrarError('Por Favor Ingrese Su Correo', msError);
+            inputError([formContact.correo]);
+            formContact.correo.focus();
+            return false;
+        } else {
+            if (!ValidarCorreo(correo)) {
+                mostrarError('Por favor ingrese un correo valido', msError);
+                inputError([formContact.correo]);
+                formContact.correo.focus();
+                return false;
+            }
+        }
+
+        if(telefono=="" || telefono==null)
+        {
+            mostrarError('Por favor ingrese su Numero De Contacto',msError);
+            inputError([formContact.telefono]);
+            formContact.telefono.focus();
+            return false;
+        }
+
+        formContact.submit();
+        return true;
+    })
+}
 
 
 // Funcionesque muestran errores

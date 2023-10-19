@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../styles/tablero.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="shortcut icon " href="../img/logo.ico">
+    <link rel="shortcut icon " href="../assets/img/logo.ico">
     <title>Somos Tierra</title>
 </head>
 
@@ -19,7 +19,7 @@
             <!-- NAVBAR PRINCIPAL -->
             <header class="dashboard-header">
                 <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
-                <a href="/"><img height="60px" src="../img/logo.png" class="mCS_img_loaded"></a>
+                <a href="/"><img height="60px" src="../assets/img/logo.png" class="mCS_img_loaded"></a>
             </header>
             <!-- NAVBAR LATERAL -->
 
@@ -30,10 +30,6 @@
                         Inicio
                     </div>
                 </a>
-                <div class='dashboard-nav-dropdown'>
-                    <a href="./tableroAdm.php" class="dashboard-nav-item disabled"><i class="fa-solid fa-user"></i>Mi Cuenta</a>
-                </div>
-
                 <div class='dashboard-nav-dropdown'>
                     <a href="./adm.php" class="dashboard-nav-item"><i class=" fas fa-user-lock "></i>Admin</a>
                 </div>

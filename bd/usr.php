@@ -1,38 +1,35 @@
 <?php
-// remove all session variables
-session_unset();
-
-include('config.php');
-
+ require('config.php');
 // Obtengo los datos cargados en el formulario de login.
 $email = $_POST['correo'];
-$password = $_POST['password'];
+$email = addslashes($email);
+$email = strip_tags($email);
 
+$password = sha1($_POST['password']);
+$password = addslashes($password);
+$password = strip_tags($password);
 // Consulta segura para evitar inyecciones SQL.
-$sql = "SELECT email, perfil FROM usuarios WHERE email='$email' AND contraseña = '$password'";
+$sql = "SELECT id_usuarios,nombre,email, perfil FROM usuarios WHERE email='$email' AND contraseña = '$password'";
 
-$resultUsuario = mysqli_query($con, $sql);
-$row = mysqli_fetch_array($resultUsuario);
-
-
-// Verificando si el usuario existe en la base de datos.
-if ($row['email'] == $email and $row['email'] != NULL) {
-    // Guardo en la sesión el email del usuario.
-    if ($row['perfil'] == "administrador") {
-        $_SESSION['email'] =  $row['email'];
-
-        // Redirecciono al usuario a la página principal del sitio.
+$resultUsuario = $con->query($sql);
+$row = $resultUsuario->fetch_assoc();
+$id= $row['id_usuarios'];
+$nombre = $row['nombre'];
+$perfil =$row['perfil'];
+if ($resultUsuario->num_rows === 0) {
+    echo '<script language="javascript">alert("Datos Incorrectos");window.location.href="../registro.php"</script>';
+} else {
+    session_start();
+    $_SESSION["username"] = $nombre;
+    $_SESSION["perfil"] = $perfil;
+    $_SESSION["id_usuario"]=$id;
+    if ($row['perfil'] == "Administrador") {
+        // Redirecciono al usuario a la página principal del administrador del sitio.
         header("HTTP/1.1 302 Moved Temporarily");
-        header("Location: ../administrador/tableroAdm.php");
-    }else{
-        $_SESSION['email'] =  $row['email'];
-
-        // Redirecciono al usuario a la página principal del sitio.
+        header("Location: ../administrador/Adm.php");
+    } else {
+        // Redirecciono al usuario a la página principal del usuario 
         header("HTTP/1.1 302 Moved Temporarily");
         header("Location: ../usuario/tablerousr.php");
     }
-} else {
-
-    echo 'El email o password es incorrecto, <a href="../registro.php">vuelva a intenarlo</a>.<br/>';
-    echo '<script language="javascript">alert("Error de autentificacion");window.location.href="../registro.php"</script>';
 }

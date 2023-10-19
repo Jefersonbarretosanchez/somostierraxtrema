@@ -1,85 +1,225 @@
+@import url('https://fonts.cdnfonts.com/css/kepler-std-3');
+@import url('https://fonts.cdnfonts.com/css/zilla-slab');
+
+:root {
+    --colorFondo: rgb(247, 240, 229);
+    --colorOscuro: #54351A;
+    --colorClaro: #c59f61;
+    --text: 'Zilla Slab', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.navbar{
-    background-color: #f8f3f3 ;
-    box-shadow: 0 2px 4px rgb(0, 0, 0,0.05);
+
+body {
+    width: 100vw;
+    background-color: var(--colorFondo);
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+.footerG{
+    background-color: var(--colorFondo) !important;
+}
+
+/* Estilos Barra Navegacion */
+.navbar {
+    background-color: #f8f3f3;
+    box-shadow: 0 2px 4px rgb(0, 0, 0, 0.05);
     min-height: 100px;
 }
-.nav-link{
+
+.nav-link {
     color: #000000;
     margin-right: 15px;
     font-family: italic;
     font-size: large;
     font-style: inherit;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     color: #038C17;
 }
-.logo-empresa{
+
+.logo-empresa {
     min-width: 60px;
     max-width: 80px;
     margin-left: 60px;
 }
-.navbar-toggler{
+
+.navbar-toggler {
     font-size: 40px;
 }
-.navbar-toggler:focus{
+
+.navbar-toggler:focus {
     outline: none;
 }
-.container{
-    padding: 5px;
+
+.dropdown-menu {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    display: none;
 }
-.slide{
+
+/* Estilos Slider */
+.slide {
     margin-top: 10px;
 }
-.slide img{
+
+.slide img {
     height: 90vh !important;
 }
-.titlealbum{
+
+/* Estilos Grid */
+.contenedor-grid {
+    width: 90%;
+    margin: auto;
+    padding: 5px;
+
+}
+
+.menuContent {
+    background-color: rgb(56, 55, 55);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    /*Me crea 3 columnas de igual tamaño*/
+    grid-template-rows: 1fr !important;
+    justify-items: auto;
+    /*Me crea 3 filas de igual tamaño*/
+}
+
+/* contenedor de cada sección del menú */
+.menu {
+    position: relative;
+    overflow: hidden;
+
+}
+
+.menu a {
+    font-family: 'Zilla Slab', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
     text-align: center;
-    font-family: cursive;
-    color: #A68B03;
+    color: #FFFF;
+    text-decoration: none;
 }
-.card img{
-    height: 40vh;
+
+.images {
+    width: 50vh;
+    height: 50vh ;
+    /* width: 300px !important; */
+    opacity: 0.5;
+    transition: all 8s ease-out;
+    margin: 0;
 }
-.title-videos{
-    font-family: cursive;
-    color: #A68B03;
+
+
+.menuIcons {
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 40% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.cell{
+
+.menuIcons h3 {
+    margin: 10px;
+    padding: 0;
+}
+
+/* Cuando hover sobre la etiqueta a, cambie el color de la imágen y el texto h3 */
+/* link */
+.menu a:hover .menuIcons img,
+.menu a:hover .menuIcons h3 {
+    filter: invert(61%) sepia(85%) saturate(218%) hue-rotate(358deg) brightness(150%) contrast(95%);
+}
+
+.menu a:hover .images {
+    transform: scale(1.2);
+}
+
+
+/* Estilos Secciones */
+.container {
+    padding: 5px;
+    width: 90%;
+}
+
+.cols {
+    padding: 0;
+    margin: 0;
+}
+
+.title-sections {
+    text-align: center;
+    font-family: 'Kepler Std', sans-serif;
+    color: #574e20;
+}
+
+.card {
+    padding: 0;
+    margin: 0;
+    border-color: #574e20;
+}
+
+.card img {
+    height: 35vh;
+}
+
+.title-videos {
+    font-family: 'Kepler Std', sans-serif;
+    color: #574e20;
+}
+
+.cell {
     height: 50vh;
 }
-.card video{
+
+.card video {
     height: 40vh;
+    border-color: #000000;
 }
-.descripcion-empresa{
+
+.video {
+    background-color: #e6e3e3;
+}
+
+a {
+    text-decoration: none;
+}
+
+.descripcion-empresa {
     text-align: justify;
 }
 
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-  font-size:30px;
-	box-shadow: 2px 2px 3px #999;
-  z-index:100;
-}
-.float:hover {
-	text-decoration: none;
-	color: #25d366;
-  background-color:#fff;
+/* Estilos Boton Flotante Whatsapp */
+.float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 100;
 }
 
-.my-float{
-	margin-top:16px;
+.float:hover {
+    text-decoration: none;
+    color: #25d366;
+    background-color: #fff;
+}
+
+.my-float {
+    margin-top: 16px;
 }

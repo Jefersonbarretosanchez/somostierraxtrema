@@ -1,18 +1,26 @@
 :root {
-    --navbar-lateral-color: #3E4851;
+    --navbar-lateral-color: #9e9550;
     --navbar-lateral-backgroud: #FFFFFF;
-    --navbar-lateral-boxshadow: #A4D8CB;
-    --navbar-link: #A4D8CB;
+    --navbar-lateral-boxshadow: #92843d;
+    --navbar-link: #01b75c;
 
-    --navbar-lateral-header: #3E4851;
+    --navbar-lateral-header: #5b6670;
 
-    --navbar-superior-background: #1777cc;
+    --navbar-superior-background: #5b6670;
     --navbar-superior-color: #FFFFFF;
     --navbar-superior-hover: #A4D8CB;
 
     --navbar-externo-color: #FFFFFF;
     --navbar-externo-link: #FFFFFF;
     --navbar-externo-boxshadow: #3E4851;
+
+    --color-negro: #364E65;
+    --color-texto: #01b75c;
+    --color-rojo: #ED0722;
+    --color-rgba-rojo: rgba(237, 7, 34, .21);
+    --color-rgba-celeste: rgba(55, 147, 246, .27);
+    --color-celeste: #3793F6;
+    --color-input: #EEF5F9;
 }
 
 * {
@@ -92,7 +100,14 @@ a:hover {
     box-shadow: var(--navbar-lateral-boxshadow) 1.95px 1.95px;
     z-index: 99999;
 }
-
+.avatar{
+    text-align: center !important;
+    border-radius: 50px !important;
+    margin-top: 10px;
+}
+.info-user{
+    font-size: 20px !important;
+}
 .dashboard-compact .dashboard-nav {
     display: none;
 }
@@ -161,6 +176,7 @@ a:hover {
     align-items: center;
     letter-spacing: 0.02em;
     transition: ease-out 0.5s;
+    text-decoration: none;
 }
 
 .dashboard-nav-item i {
@@ -170,7 +186,7 @@ a:hover {
 }
 
 .dashboard-nav-item:hover {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(54, 189, 24, 0.04);
 }
 
 
@@ -186,9 +202,11 @@ a:hover {
     -ms-flex-direction: column;
     flex-direction: column;
 }
-
+.dashboard-nav-dropdown a{
+    text-decoration: none;
+}
 .dashboard-nav-dropdown.show {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(155, 23, 23, 0.04);
 }
 
 .dashboard-nav-dropdown.show>.dashboard-nav-dropdown-toggle {
@@ -491,7 +509,41 @@ a:hover {
     text-decoration: none;
     color: var(--navbar-superior-hover);
 }
+/* modal */
+.formulario-modal .modal-footer .btn{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: var(--color-celeste);
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-top: 30px;
+    outline: 0;
+    cursor: pointer;
+    display: block;
+}
+.formulario-modal .btn:hover{
+    background: #3285dd;
+}
+.formulario-modal {
+    margin-top: 30px;
+}
 
+
+.formulario-modal .input-text {
+    padding: 14px 20px;
+    border: 1px solid transparent;
+    background: var(--color-input);
+    margin-bottom: 20px;
+    border-radius: 3px;
+    width: 100%;
+    outline: 0;
+    font-size: 14px;
+    color: var(--color-texto);
+}
+/* Formulario */
 .formulario .btn {
     width: 100%;
     padding: 14px;
@@ -510,32 +562,42 @@ a:hover {
 .formulario .btn:hover {
     background: #141313;
 }
+
 .text {
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
-.title-principal{
+
+.title-principal {
     font-family: 'Times New Roman', Times, serif;
     font-size: 35px;
     text-align: center;
 }
+
 .title {
     font-size: 30px;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-.hr-title{
-    border: 3px solid #666; border-radius: 300px/10px; height: 0px; text-align: center; width: 90%;
+
+.hr-title {
+    border: 3px solid #666;
+    border-radius: 300px/10px;
+    height: 0px;
+    text-align: center;
+    width: 100%;
 }
+
 .hr-encabezado {
     border: 0;
     height: 2px;
     border-top: 1px dashed black;
     border-bottom: 1px dashed black;
-    width: 90%;
+    width: 100%;
 }
 
 .hr-datos {
     border: 0;
     border-top: 4px double blue;
-    width: 90%;
+    width: 100%;
 }
+

@@ -1,12 +1,11 @@
 <?php
-try {
-    include('../bd/config.php');
-
-    $id = $_GET['id_usuarios'];
-    $consultaSQL = "DELETE FROM usuarios WHERE id_usuarios =" . $id;
-    $result = mysqli_query($con, $consultaSQL);
+include('config.php');
+if (!empty($_GET["id"])) {
+    $id = $_GET["id"];
+    $sql = "DELETE from usuarios where id_usuarios=$id";
+    $result = mysqli_query($con, $sql);
+    header("HTTP/1.1 302 Moved Temporarily"); 
     header('Location: ../administrador/adm.php');
-} catch (PDOException $error) {
-    $resultado['error'] = true;
-    $resultado['mensaje'] = $error->getMessage();
+   
 }
+
